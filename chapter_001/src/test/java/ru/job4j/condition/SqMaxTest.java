@@ -29,5 +29,10 @@ public class SqMaxTest {
         int res = SqMax.max(1, 1, 1, 1);
         assertThat(res, is(1));
     }
+    @Test
+    public void test1() {
+        int res = SqMax.max(11, 2, 30, 4);
+        assertThat(res, is(30));
+    }
 
 }
