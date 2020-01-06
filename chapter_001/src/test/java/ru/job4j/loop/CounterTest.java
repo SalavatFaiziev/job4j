@@ -10,6 +10,5 @@ public class CounterTest {
         Counter co=new Counter();
         int res=co.add(1,10);
         assertThat(res,is(30));
-
     }
 }

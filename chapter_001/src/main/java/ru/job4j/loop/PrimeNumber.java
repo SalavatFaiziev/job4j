@@ -5,8 +5,9 @@ public class PrimeNumber {
         int count = 0;
         CheckPrimeNumber ch=new CheckPrimeNumber();
         for (int i = 2; i <= finish; i++) {
-            if (ch.check(i))
+            if (ch.check(i)){
                 count++;
+            }
         }
         return count;
 

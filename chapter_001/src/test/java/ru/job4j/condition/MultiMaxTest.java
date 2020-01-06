@@ -28,4 +28,5 @@ public class MultiMaxTest {
         int result = check.max(11, 11, 11);
         assertThat(result, is(11));
     }
+
 }
