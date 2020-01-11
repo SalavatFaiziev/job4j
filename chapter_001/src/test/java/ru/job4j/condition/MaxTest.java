@@ -12,14 +12,14 @@ public class MaxTest {
     }
 
     @Test
-    public void whenMax2To1Then(){
-        int result = Max.max(5,3);
-        assertThat(result,is(5));
+    public void whenMax2To1Then() {
+        int result = Max.max(5, 3);
+        assertThat(result, is(5));
     }
 
     @Test
-    public void whenMaxEqual(){
-        int result = Max.max(3,3);
+    public void whenMaxEqual() {
+        int result = Max.max(3, 3);
         assertThat(result, is(3));
     }
 }

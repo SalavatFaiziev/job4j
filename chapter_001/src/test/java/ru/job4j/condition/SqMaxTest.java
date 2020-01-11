@@ -10,14 +10,14 @@ public class SqMaxTest {
         assertThat(res, is(11));
     }
     @Test
-    public void whenSecondMax(){
-        int res = SqMax.max(1,22,3,4);
-        assertThat(res,is(22));
+    public void whenSecondMax() {
+        int res = SqMax.max(1, 22, 3, 4);
+        assertThat(res, is(22));
     }
     @Test
-    public void whenThirdMax(){
-        int res = SqMax.max(1,2,33,4);
-        assertThat(res,is(33));
+    public void whenThirdMax() {
+        int res = SqMax.max(1, 2, 33, 4);
+        assertThat(res, is(33));
     }
     @Test
     public void whenFourthMax() {
