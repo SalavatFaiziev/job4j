@@ -22,5 +22,17 @@ public class MaxTest {
         int result = Max.max(3, 3);
         assertThat(result, is(3));
     }
+
+    @Test
+    public void max1() {
+        int res = Max.max(31, 12, 2222, 4);
+        assertThat(res, is(2222));
+    }
+
+    @Test
+    public void max2() {
+        int res = Max.max(3121, 312, 222);
+        assertThat(res, is(3121));
+    }
 }
 
