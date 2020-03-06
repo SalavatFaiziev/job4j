@@ -6,15 +6,7 @@ public class Shop {
             products[i] = products[i + 1];
         }
         products[products.length - 1] = null;
-        for (int i = 0; i < products.length; i++) {
-            Product product = products[i];
-            if (product != null) {
-                System.out.println(product.getName());
-            } else {
-                System.out.println("null");
-            }
-        }
-        return products;
+               return products;
     }
 
     public static void main(String[] args) {
@@ -24,6 +16,14 @@ public class Shop {
         products[2] = new Product("Egg", 19);
 
         Shop s = new Shop();
-        s.delete(products, 1);
+        s.delete(products, 0);
+        for (int i = 0; i < products.length; i++) {
+            Product product = products[i];
+            if (product != null) {
+                System.out.println(product.getName());
+            } else {
+                System.out.println("null");
+            }
+        }
     }
 }
