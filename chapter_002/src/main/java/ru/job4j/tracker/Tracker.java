@@ -33,15 +33,28 @@ public class Tracker {
         return Arrays.copyOf(tmp, size);
     }
 
-    public Item findById(String id) {
-        Item item = null;
+    private int indexOf(String id) {
+        int rsl = -1;
         for (int index = 0; index < position; index++) {
-            Item current = items[index];
-            if (current.getId().equals(id)) {
-                item = current;
+            if (items[index].getId().equals(id)) {
+                rsl = index;
                 break;
             }
         }
-        return item;
+        return rsl;
+    }
+
+    public Item findById(String id) {
+        int index = indexOf(id);
+        return index != -1 ? this.items[index] : null;
+    }
+
+    public boolean replace(String id, Item item) {
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(id);
+            this.items[index] = item;
+        }
+        return index != -1 ? true : false;
     }
 }
