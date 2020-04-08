@@ -68,7 +68,7 @@ public class Tracker {
             items[position - 1] = null;
             position--;
         }
-        return position != -1 ? true : false;
+        return index != -1 ? true : false;
     }
 
 }
