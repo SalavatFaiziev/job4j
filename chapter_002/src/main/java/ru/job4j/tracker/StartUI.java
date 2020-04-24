@@ -1,6 +1,11 @@
 package ru.job4j.tracker;
 
 public class StartUI {
+
+    public static void toString(Item item) {
+        System.out.println("item name: " + item.getName() + " | item id: " + item.getId());
+    }
+
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
@@ -11,14 +16,14 @@ public class StartUI {
     public static void showAll(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         for (Item item : tracker.findAll()) {
-            System.out.println(item + " id: "  + item.getId());
+            toString(item);
         }
     }
 
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
         String id = input.askStr("Enter id: ");
-        String itemReplaced = input.askStr("Enter new");
+        String itemReplaced = input.askStr("Enter new name : ");
         Item itemNew = new Item(itemReplaced);
         if (tracker.replace(id, itemNew)) {
             System.out.println("Success");
@@ -42,9 +47,10 @@ public class StartUI {
         String id = input.askStr("Enter item id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println("id: " + item.getId() + " " + item);
+            System.out.println("Item found");
+            toString(item);
         } else {
-            System.out.println("item not found");
+            System.out.println("Item not found");
         }
     }
 
@@ -52,7 +58,12 @@ public class StartUI {
         System.out.println("=== Find item by name ====");
         String name = input.askStr("Enter item name: ");
         for (Item item: tracker.findByName(name)) {
-            System.out.println(item.getName() + " " + item);
+            if (item != null) {
+                System.out.println("Item found");
+                toString(item);
+            } else {
+                System.out.println("Item not found");
+            }
         }
     }
 
