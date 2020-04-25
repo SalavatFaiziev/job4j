@@ -2,6 +2,11 @@ package ru.job4j.tracker;
 import java.util.Objects;
 
 public class Item {
+    @Override
+    public String toString() {
+        return "Name: " + this.getName() + " | " + "Id: " + this.getId();
+    }
+
     private String id;
     private String name;
 

@@ -2,10 +2,6 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
-    public static void toString(Item item) {
-        System.out.println("item name: " + item.getName() + " | item id: " + item.getId());
-    }
-
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
@@ -16,7 +12,7 @@ public class StartUI {
     public static void showAll(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         for (Item item : tracker.findAll()) {
-            toString(item);
+            System.out.println(item.toString());
         }
     }
 
@@ -48,7 +44,7 @@ public class StartUI {
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println("Item found");
-            toString(item);
+            System.out.println(item.toString());
         } else {
             System.out.println("Item not found");
         }
@@ -60,7 +56,7 @@ public class StartUI {
         for (Item item: tracker.findByName(name)) {
             if (item != null) {
                 System.out.println("Item found");
-                toString(item);
+                System.out.println(item.toString());
             } else {
                 System.out.println("Item not found");
             }
