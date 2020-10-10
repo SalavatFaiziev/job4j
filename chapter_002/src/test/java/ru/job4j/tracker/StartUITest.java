@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.nullValue;
 
+
 public class StartUITest {
     @Test
     public void whenExit() {
@@ -13,11 +14,13 @@ public class StartUITest {
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new ExitAction()
+                new ExitAction(out)
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() + "0. Exit" + System.lineSeparator()
-        ));
+                "Menu." + System.lineSeparator() + "0. Exit"
+                        + System.lineSeparator() + "Exit" + System.lineSeparator()));
     }
-}
+  }
+
+
