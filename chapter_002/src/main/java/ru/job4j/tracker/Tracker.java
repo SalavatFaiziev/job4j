@@ -13,7 +13,7 @@ public class Tracker {
     }
 
     public List<Item> findAll() {
-        return items;
+        return new ArrayList<>(List.copyOf(items));
     }
 
     public List<Item> findByName(String key) {
@@ -46,6 +46,7 @@ public class Tracker {
         boolean rsl = false;
         int index = indexOf(id);
         if (index != -1) {
+            item.setId(id);
             items.set(index, item);
             items.get(index).setId(id);
         }
